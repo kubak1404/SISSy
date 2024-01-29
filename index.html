@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/css/styles.css">
+    <title>Willst du?</title>
+</head>
+<body>
+    <div class="container">
+        <div >
+            <h1 class = "header_text">Willst du mit mir auf ein Date gehen? &lt;3</h1>
+        </div>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/LnKonfpQ44fNvuGLkA/giphy.gif" alt="Süßes Bild">
+        </div>
+        <div class = "buttons">
+            <button class="btn" id = "yesButton" onclick="nextPage()">Ja</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">Nein</button>
+            <script>
+                function nextPage() {
+                    window.location.href = "yes.html";
+                }
+                
+                function moveButton() {
+                    var button = document.getElementById('noButton');
+                    var screenWidth = window.innerWidth - button.clientWidth;
+                    var screenHeight = window.innerHeight - button.clientHeight;
+
+                    var randomX = Math.floor(Math.random() * screenWidth);
+                    var randomY = Math.floor(Math.random() * screenHeight);
+
+                    button.style.left = randomX + 'px';
+                    button.style.top = randomY + 'px';
+                }
+            </script> 
+        </div>
+    </div>
+</body>
+</html>
